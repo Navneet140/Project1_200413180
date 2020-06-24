@@ -26,17 +26,19 @@
         </div>
         <div class="card-body">          
           <p class="card-text">
-            <%= resource.synopsis %>
+            Description!  --><a href="/resources/<%= resource.id %>">more...</a>
           </p>
-          <a href="/resources/<%= resource.id %>">more...</a>
+          
         </div>
         <div class="card-body">          
           <p class="card-text">
+            Author:
             <%= resource.author %>
           </p>
         </div>
         <div class="card-body">          
           <p class="card-text">
+            This collection has been given a rating of:
             <%= resource.rating %>
           </p>
         </div>

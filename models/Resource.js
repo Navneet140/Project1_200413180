@@ -42,13 +42,10 @@ const ResourceSchema = new mongoose.Schema({
 });
 
 // Query Helpers
-
-ResourceSchema.virtual('synopsis')
+ResourceSchema.virtual('fullname')
 .get(function () {
-  const post = this.content;
-  return post
-    .replace(/(<([^>]+)>)/ig,"")
-    .substring(0, 250);
+  return `${this.firstName} ${this.lastName}`;
 });
+
 
 module.exports = mongoose.model('Resource', ResourceSchema);

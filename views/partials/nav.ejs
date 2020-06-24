@@ -11,9 +11,19 @@
         <a class="nav-link" href="/">Home</a>
       </li>
 
-      <% if (authorized) { %>
-        
-      <% } %>
+      <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" id="resourcessDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Resources
+          </a>
+  
+          <div class="dropdown-menu" aria-labelledby="blogsDropdown">
+            <a href="/resources" class="dropdown-item">Collections</a>
+            <% if (authorized) { %>
+              <div class="dropdown-divider"></div>
+              <a href="/resources/new" class="dropdown-item">New Collection</a>
+            <% } %>
+          </div>
+        </li>
     </ul>
 
     <ul class="navbar-nav">
@@ -31,6 +41,7 @@
             Login
           </a>
         </li>
+        
       <% } else { %>
         <li class="nav-item">
           <a href="/logout" class="nav-link">
